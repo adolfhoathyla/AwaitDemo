@@ -17,4 +17,12 @@ protocol Networkable {
      func login(username: String,
                   password: String,
                   disposeBag: DisposeBag) -> Promise<User>
+    
+    func sendEmail(user: User,
+                   disposeBag: DisposeBag) -> Promise<SendEmail>
+    
+    func login2(username: String,
+                password: String,
+                disposeBag: DisposeBag,
+                completion: @escaping ((User?) -> ()))
 }

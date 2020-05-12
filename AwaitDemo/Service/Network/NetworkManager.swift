@@ -29,4 +29,30 @@ class NetworkManager: Networkable {
         }
     }
     
+    func sendEmail(user: User,
+                   disposeBag: DisposeBag) -> Promise<SendEmail> {
+        return Promise<SendEmail> { sendEmail in
+            provider.rx.request(.sendEmail(user: user)).map(SendEmail.self).subscribe { (event) in
+                switch event {
+                case .success(let response):
+                    sendEmail.fulfill(response)
+                case .error(let error):
+                    sendEmail.reject(error)
+                }
+            }.disposed(by: disposeBag)
+            
+        }
+    }
+    
+    func login2(username: String, password: String, disposeBag: DisposeBag, completion: @escaping ((User?) -> ())) {
+        provider.rx.request(.login(username: username, password: password)).map(User.self).subscribe { (event) in
+            switch event {
+            case .success(let response):
+                completion(response)
+            case .error(_):
+                completion(nil)
+            }
+        }.disposed(by: disposeBag)
+    }
+    
 }

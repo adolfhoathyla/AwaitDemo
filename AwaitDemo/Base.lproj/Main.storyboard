@@ -27,10 +27,27 @@
                                 <color key="textColor" red="1" green="0.24313725489999999" blue="0.31372549020000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="check" translatesAutoresizingMaskIntoConstraints="NO" id="kT8-Sp-rbh">
+                                <rect key="frame" x="177" y="496" width="60" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="9y1-cv-j2v"/>
+                                    <constraint firstAttribute="height" constant="60" id="d6c-TO-eqL"/>
+                                </constraints>
+                            </imageView>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="e-mail enviado" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uUh-hx-S2U">
+                                <rect key="frame" x="133" y="564" width="148" height="31"/>
+                                <fontDescription key="fontDescription" name="KohinoorTelugu-Regular" family="Kohinoor Telugu" pointSize="22"/>
+                                <color key="textColor" red="0.25490196079999999" green="0.25490196079999999" blue="0.25490196079999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="uUh-hx-S2U" firstAttribute="top" secondItem="kT8-Sp-rbh" secondAttribute="bottom" constant="8" id="4GB-xn-lav"/>
                             <constraint firstItem="Nmk-jW-Wom" firstAttribute="top" secondItem="O6f-jg-Iv1" secondAttribute="bottom" constant="8" id="5IW-YU-6Tu"/>
+                            <constraint firstItem="kT8-Sp-rbh" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="A2s-4u-7ET"/>
+                            <constraint firstItem="uUh-hx-S2U" firstAttribute="centerX" secondItem="kT8-Sp-rbh" secondAttribute="centerX" id="GXR-y2-Bru"/>
+                            <constraint firstItem="kT8-Sp-rbh" firstAttribute="top" secondItem="Nmk-jW-Wom" secondAttribute="bottom" constant="40" id="LUn-DH-kln"/>
                             <constraint firstItem="O6f-jg-Iv1" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="XaL-uM-wig"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="O6f-jg-Iv1" secondAttribute="trailing" constant="16" id="erF-Xp-hMu"/>
                             <constraint firstItem="Nmk-jW-Wom" firstAttribute="leading" secondItem="O6f-jg-Iv1" secondAttribute="leading" id="mS6-20-4tG"/>
@@ -42,7 +59,9 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="emailLabel" destination="Nmk-jW-Wom" id="SzP-K3-aWW"/>
+                        <outlet property="emailIcon" destination="kT8-Sp-rbh" id="5UD-gV-kwm"/>
+                        <outlet property="emailLabel" destination="Nmk-jW-Wom" id="LlP-rY-4Iq"/>
+                        <outlet property="emailSentLabel" destination="uUh-hx-S2U" id="aNT-hE-DYn"/>
                         <outlet property="nameLabel" destination="O6f-jg-Iv1" id="wkX-rD-Ggz"/>
                     </connections>
                 </viewController>
@@ -51,4 +70,7 @@
             <point key="canvasLocation" x="139" y="74"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="check" width="41" height="41"/>
+    </resources>
 </document>

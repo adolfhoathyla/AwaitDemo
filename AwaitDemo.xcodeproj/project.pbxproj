@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		000E4C3D246B469000D113A8 /* SendEmail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000E4C3C246B469000D113A8 /* SendEmail.swift */; };
 		00D2C6C82467001F0014DA24 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D2C6C72467001F0014DA24 /* AppDelegate.swift */; };
 		00D2C6CA2467001F0014DA24 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D2C6C92467001F0014DA24 /* SceneDelegate.swift */; };
 		00D2C6CC2467001F0014DA24 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D2C6CB2467001F0014DA24 /* ViewController.swift */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		000E4C3C246B469000D113A8 /* SendEmail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendEmail.swift; sourceTree = "<group>"; };
 		00D2C6C42467001F0014DA24 /* AwaitDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AwaitDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		00D2C6C72467001F0014DA24 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		00D2C6C92467001F0014DA24 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 			isa = PBXGroup;
 			children = (
 				00D2C6DE246707780014DA24 /* User.swift */,
+				000E4C3C246B469000D113A8 /* SendEmail.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -246,6 +249,7 @@
 				00D2C6CC2467001F0014DA24 /* ViewController.swift in Sources */,
 				00D2C6C82467001F0014DA24 /* AppDelegate.swift in Sources */,
 				00D2C6E524670AA80014DA24 /* NetworkManager.swift in Sources */,
+				000E4C3D246B469000D113A8 /* SendEmail.swift in Sources */,
 				00D2C6CA2467001F0014DA24 /* SceneDelegate.swift in Sources */,
 				00D2C6E324670A9C0014DA24 /* Networkable.swift in Sources */,
 				00D2C6E1246708D10014DA24 /* API.swift in Sources */,
