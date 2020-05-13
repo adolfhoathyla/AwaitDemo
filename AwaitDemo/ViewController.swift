@@ -26,24 +26,24 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        provider.login2(username: "goku", password: "goku123", disposeBag: disposeBag) { [weak self] (user) in
-//            guard let weakself = self, let user = user else { return }
-//            weakself.setUser(user: user)
-//            print("Objeto \(user) setado com sucesso!")
-//
-//            weakself.provider.sendEmail2(user: user, disposeBag: weakself.disposeBag) { (sendEmail) in
-//                guard let sendEmail = sendEmail else { return }
-//                weakself.emailSent(sendEmail: sendEmail)
-//                print("Email enviado com sucesso!")
-//
-//            }
-//
-//        }
+        provider.login2(username: "goku", password: "goku123", disposeBag: disposeBag) { [weak self] (user) in
+            guard let weakself = self, let user = user else { return }
+            weakself.setUser(user: user)
+            print("Objeto \(user) setado com sucesso!")
+
+            weakself.provider.sendEmail2(user: user, disposeBag: weakself.disposeBag) { (sendEmail) in
+                guard let sendEmail = sendEmail else { return }
+                weakself.emailSent(sendEmail: sendEmail)
+                print("Email enviado com sucesso!")
+
+            }
+
+        }
         
         async { [weak self] in
             guard let weakself = self else { return }
             
-            let user = try! await(weakself.signIn(username: "goku", password: "goku123"))
+            let user = try! await(weakself.provider.login(username: "goku", password: "goku123", disposeBag: weakself.disposeBag))
             weakself.setUser(user: user)
             print("Objeto \(user) setado com sucesso!")
 
@@ -71,12 +71,5 @@ class ViewController: UIViewController {
             weakself.emailSentLabel.isHidden = !sendEmail.success
         }
     }
-    
-    // MARK: - Request
-    private func signIn(username: String, password: String) -> Promise<User> {
-        provider.login(username: username, password: password, disposeBag: disposeBag)
-    }
-
-
 }
 
