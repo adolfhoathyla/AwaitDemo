@@ -14,19 +14,9 @@ import PromiseKit
 protocol Networkable {
     var provider: MoyaProvider<API> { get }
     
-     func login(username: String,
-                  password: String,
-                  disposeBag: DisposeBag) -> Promise<User>
+    func login(username: String, password: String, disposeBag: DisposeBag, completion: @escaping ((User?) -> ()))
+    func sendEmail(user: User, disposeBag: DisposeBag, completion: @escaping ((SendEmail?) -> ()))
     
-    func sendEmail(user: User,
-                   disposeBag: DisposeBag) -> Promise<SendEmail>
-    
-    func login2(username: String,
-                password: String,
-                disposeBag: DisposeBag,
-                completion: @escaping ((User?) -> ()))
-    
-    func sendEmail2(user: User,
-                    disposeBag: DisposeBag,
-                    completion: @escaping ((SendEmail?) -> ()))
+    func login(username: String, password: String, disposeBag: DisposeBag) -> Promise<User>
+    func sendEmail(user: User, disposeBag: DisposeBag) -> Promise<SendEmail>
 }
