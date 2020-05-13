@@ -55,4 +55,15 @@ class NetworkManager: Networkable {
         }.disposed(by: disposeBag)
     }
     
+    func sendEmail2(user: User, disposeBag: DisposeBag, completion: @escaping ((SendEmail?) -> ())) {
+        provider.rx.request(.sendEmail(user: user)).map(SendEmail.self).subscribe { (event) in
+            switch event {
+            case .success(let response):
+                completion(response)
+            case .error(_):
+                completion(nil)
+            }
+        }.disposed(by: disposeBag)
+    }
+    
 }

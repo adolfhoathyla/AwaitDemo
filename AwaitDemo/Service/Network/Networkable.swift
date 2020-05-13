@@ -25,4 +25,8 @@ protocol Networkable {
                 password: String,
                 disposeBag: DisposeBag,
                 completion: @escaping ((User?) -> ()))
+    
+    func sendEmail2(user: User,
+                    disposeBag: DisposeBag,
+                    completion: @escaping ((SendEmail?) -> ()))
 }

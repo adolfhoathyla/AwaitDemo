@@ -29,20 +29,28 @@ class ViewController: UIViewController {
 //        provider.login2(username: "goku", password: "goku123", disposeBag: disposeBag) { [weak self] (user) in
 //            guard let weakself = self, let user = user else { return }
 //            weakself.setUser(user: user)
-//
 //            print("Objeto \(user) setado com sucesso!")
+//
+//            weakself.provider.sendEmail2(user: user, disposeBag: weakself.disposeBag) { (sendEmail) in
+//                guard let sendEmail = sendEmail else { return }
+//                weakself.emailSent(sendEmail: sendEmail)
+//                print("Email enviado com sucesso!")
+//
+//            }
+//
 //        }
         
         async { [weak self] in
             guard let weakself = self else { return }
+            
             let user = try! await(weakself.signIn(username: "goku", password: "goku123"))
             weakself.setUser(user: user)
             print("Objeto \(user) setado com sucesso!")
-            
+
             let sendEmail = try! await(weakself.provider.sendEmail(user: user, disposeBag: weakself.disposeBag))
             weakself.emailSent(sendEmail: sendEmail)
             print("Email enviado com sucesso!")
-            
+
         }
 
     }
